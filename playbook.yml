@@ -10,7 +10,7 @@
       service: name=apache2 state=started enabled=yes
 
     - name: 4. install Hello World PHP script
-      copy: src=index.html dest=/var/www/ mode=0664
+      copy: src=./index.html dest=/var/www/ mode=0664
     
     - name : 5. check status
       command: curl http://localhost
