@@ -11,3 +11,10 @@
 
     - name: 4. install Hello World PHP script
       copy: src=index.html dest=/var/www/ mode=0664
+    
+    - name : 5. check status
+      command: curl http://localhost
+      register: result
+
+    - name: 6. show result on screen 
+      debug: var=result.stdout_lines
