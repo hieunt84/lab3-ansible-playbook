@@ -1,20 +1,4 @@
 - hosts: ubuntu
-  tasks:
-    - name: 1. install Apache
-      apt: name=apache2 state=present
-
-#    - name: 2. install PHP module for Apache
-#      apt: name=libapache2-mod-php5 state=present
-
-    - name: 3. start Apache
-      service: name=apache2 state=started enabled=yes
-
-    - name: 4. install Hello World PHP script
-      copy: src=./index.html dest=/var/www/ mode=0664
-    
-    - name : 5. check status
-      get_url: http://localhost
-      register: result
-
-    - name: 6. show result on screen 
-      debug: var=result.stdout_lines
+  roles:
+    - webservers
+    - database
