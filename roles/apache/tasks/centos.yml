@@ -4,5 +4,5 @@
     name: "httpd"
     state: present
 
-- name: start service
+- name: Start service
   service: name=httpd state=restarted enabled=yes
