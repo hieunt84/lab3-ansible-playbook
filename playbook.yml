@@ -1,4 +1,0 @@
-- hosts: ubuntu
-  roles:
-    - webservers
-    - database
