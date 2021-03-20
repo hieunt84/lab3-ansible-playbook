@@ -1,5 +1,5 @@
 ---
-# tasks file for webserver
+# tasks file for apache
 - name: 1. install Apache
   apt: name=apache2 state=present
 

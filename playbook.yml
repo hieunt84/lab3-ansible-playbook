@@ -1,9 +1,10 @@
 ---
 - hosts: ubuntu
   roles:
-    - apache
-    - mariadb
-    - php
+    - nginx
+#    - apache
+#    - mariadb
+#    - php
 
 
 
