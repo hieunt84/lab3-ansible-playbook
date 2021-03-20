@@ -29,3 +29,6 @@
 
 - name: 6. Install MySQL extension for PHP
   apt: name=php-mysql state=present
+
+- name: 7. Copy file db.php
+  copy: src=db.php dest=/var/www/html/db.php mode=0644

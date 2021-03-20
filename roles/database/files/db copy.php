@@ -8,7 +8,7 @@ echo $statement->fetchColumn();
 
 
 <?php
-/*
+
 // connect database and quyery data and output
 $user = "example_user";
 $password = "password";
@@ -26,5 +26,5 @@ try {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
+
 ?>
-*/
