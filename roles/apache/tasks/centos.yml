@@ -5,4 +5,4 @@
     state: present
 
 - name: start service
-  service: name="httpd" state=started
+  service: name="httpd" state=restarted enabled=yes
