@@ -5,6 +5,10 @@
 #    - apache
 #    - mariadb
 #    - php
-
+  tasks:
+    - name : restart services
+      services: name="{{ item }}" state=restarted
+      with_items:
+        - nginx
 
 
