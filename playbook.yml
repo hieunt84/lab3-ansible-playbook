@@ -5,11 +5,5 @@
     - apache
 #    - mariadb
 #    - php
-  tasks:
-    - service: name=httpd state=restarted enabled=yes
-#    - name : restart services
-#      services: name="{{ item }}" state=restarted
-#      with_items:
-#        - httpd
-
+ 
 
