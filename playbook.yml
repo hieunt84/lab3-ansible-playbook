@@ -1,8 +1,8 @@
 ---
 - hosts: ubuntu
   roles:
-    - webserver
-    - database
+    - apache
+    - mariadb
     - php
 
 
