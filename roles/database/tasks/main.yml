@@ -10,9 +10,9 @@
   apt: name=mariadb-server state=present
 
 - name: 2. Start Mysql Service
-  service: name=mysql state=started enabled=true
+  service: name=mysql state=started enabled=yes
 
-- name: Install python Mysql package #required for mysql_db tasks
+- name: Install python Mysql package #required for mysql_db tasks below
   apt: name=python-mysqldb state=present
 
 - name: 3. Create a new database
@@ -26,9 +26,3 @@
 
 - name: 5b. Insert sample data
   shell: cat /tmp/dump.sql | mysql -u demo -pdemo demo
-
-- name: 6. Install MySQL extension for PHP
-  apt: name=php-mysql state=present
-
-- name: 7. Copy file db.php
-  copy: src=db.php dest=/var/www/html/db.php mode=0644

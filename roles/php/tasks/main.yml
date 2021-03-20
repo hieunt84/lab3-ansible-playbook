@@ -1,0 +1,17 @@
+---
+# tasks file for php
+
+- name: 1. install PHP module for Apache
+  apt: name=libapache2-mod-php state=present
+
+- name: 2. Install extension PHP for MySQL
+  apt: name=php-mysql state=present
+
+- name: 3. deploy Hello World PHP script
+  copy: src=index.php dest=/var/www/html/index.php mode=0664
+
+- name: 4. deploy file db.php
+  copy: src=db.php dest=/var/www/html/db.php mode=0644
+
+- name: 5. restart Apache
+  service: name=apache2 state=restarted
