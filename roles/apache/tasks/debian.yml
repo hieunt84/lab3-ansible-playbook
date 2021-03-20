@@ -3,3 +3,6 @@
   ansible.builtin.apt:
     name: "apache2"
     state: present
+
+- name: Start service
+  service: name=httpd state=restarted enabled=yes
