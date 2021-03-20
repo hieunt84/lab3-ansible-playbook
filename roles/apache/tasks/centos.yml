@@ -3,5 +3,6 @@
   ansible.builtin.yum:
     name: "httpd"
     state: present
-- name : start services
-  services: name="httpd" state=started
+
+- name : start service
+  services: name=httpd state=started
