@@ -1,0 +1,5 @@
+[centos]
+client1 ansible_host=172.20.10.122
+
+[ubuntu]
+client2 ansible_host=172.20.10.123
