@@ -1,7 +1,17 @@
 ---
 # tasks file for apache
-- name: 1. install Apache
-  apt: name=apache2 state=present
+- name: Install the correct web server for Centos
+  import_tasks: centos.yml
+  when: ansible_facts['os_family']|lower == 'centos'
 
-- name: 2. start Apache
-  service: name=apache2 state=started enabled=yes
+- name: Install the correct web server for RHEL
+  import_tasks: redhat.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
+
+- name: Install the correct web server for Debian
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Install the correct web server for Ubuntu
+  import_tasks: ubuntu.yml
+  when: ansible_facts['os_family']|lower == 'ubuntu'
