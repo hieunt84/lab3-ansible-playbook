@@ -1,9 +1,7 @@
 ---
-- hosts: centos
+- hosts: all
   roles:
-#    - nginx
     - apache
-#    - mariadb
-#    - php
+
  
 
