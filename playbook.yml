@@ -8,6 +8,6 @@
       service: name=nginx state=absent autoremove=yes
 
   roles:
-    - { role: geerling.apache }
+    - role: 'geerling/apache'
 
 
