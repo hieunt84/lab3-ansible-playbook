@@ -1,6 +1,6 @@
 ---
 - hosts: centos
-  task: 
+  tasks: 
     - name: 1.remove http 
       service: name=httpd state=absent autoremove=yes
 
