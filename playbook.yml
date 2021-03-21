@@ -1,7 +1,13 @@
 ---
-- hosts: all
-  roles:
-    - nginx
+- hosts: centos
+  task: 
+    - name: 1.remove http 
+      service: name=httpd state=absent autoremove=yes
+    - name: 2.remove nginx 
+      service: name=httpd state=absent autoremove=yes
 
+  roles:
+    - {role: geerling.apache}
+  
  
 
