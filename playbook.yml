@@ -9,6 +9,5 @@
 
   roles:
     - { role: geerling.apache }
-  
- 
+
 
