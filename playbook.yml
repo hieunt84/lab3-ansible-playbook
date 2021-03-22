@@ -5,8 +5,8 @@
     - test: "apache22.yml"
   tasks:
     - name: Include Apache 2.2 variables.
-      set_facts: 
-        - result: "{{ test.split('.')[1] }}"
+      set_fact: 
+        result: "{{ test.split('.')[1] }}"
       register: result
 
     - debug:
