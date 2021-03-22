@@ -2,16 +2,7 @@
 - name: play1 
   hosts: centos 
   vars:
-    - _test: "apache22.yml.abc.dcf"
+    - ip: "apache22.yml.abc.dcf"
   tasks:
-    - name: Include Apache 2.2 variables.
-      set_fact: 
-        test: "{{ _test.split('.') }}"
-
-    - name: print result
-      command: echo "{{ test }}"
-      changed_when: false
-      register: result
-
     - debug:
-        msg: "{{ result.stdout }}"
+        msg: "{{ ip.split('.') }}"
