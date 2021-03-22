@@ -9,7 +9,7 @@
       set_fact:
         test: "{{ apache_packages_tmp | list }}"
 #        result: "{{ apache_packages }}"
-      register: test
+      register: test1
 
     - name: show result tasks on screen 
-      debug: var=test.stdout_lines
+      debug: var=test1.stdout_lines
