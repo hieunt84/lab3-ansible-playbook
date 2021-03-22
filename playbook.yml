@@ -1,6 +1,7 @@
 ---
-- hosts: centos 
-- tasks:
+- name: play1 
+  hosts: centos 
+  tasks:
     - name: Check version of Apache.
       command: echo "testing ..."
 #      changed_when: false
