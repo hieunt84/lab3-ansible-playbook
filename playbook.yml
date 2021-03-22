@@ -8,7 +8,8 @@
     - name: Define apache_packages.
       set_fact:
         test: "{{ apache_packages_tmp | list }}"
-      command: echo "{{ test }}"
+      command: 
+        cmd: echo "{{ test }}"
       register: result
 
     - name: show result tasks on screen 
