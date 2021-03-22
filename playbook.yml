@@ -1,19 +1,10 @@
 ---
 - hosts: centos 
-  vars:
-    - apache_packages_tmp:
-      - http
-      - mysql
-  tasks:
-    - name: Define apache_packages.
-      set_fact:
-        test: "{{ apache_packages_tmp | list }}"
-      
-    - name: 2.print 
-      command: 
-        cmd: echo "{{ test }}"
-#        cmd: echo "testtttttttttttttttttttt"
+- tasks:
+    - name: Get installed version of Apache.
+      command: "httpd -v"
+      changed_when: false
+      check_mode: false
       register: result
-
-    - name: show result tasks on screen 
-      debug: var=result.stdout_lines
+    - debug:
+        msg: "{{ result.stdout}}"
