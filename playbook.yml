@@ -3,8 +3,8 @@
 - tasks:
     - name: Check version of Apache.
       command: echo "testing changed_when"
-      changed_when: false
-      check_mode: false
+#      changed_when: false
+#      check_mode: false
       register: result
     - debug:
         msg: "{{ result.stdout}}"
