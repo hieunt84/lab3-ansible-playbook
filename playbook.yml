@@ -2,9 +2,9 @@
 - hosts: centos 
 - tasks:
     - name: Check version of Apache.
-      command: echo "testing changed_when"
+      command: echo "testing ..."
 #      changed_when: false
 #      check_mode: false
-      register: result
-    - debug:
-        msg: "{{ result.stdout}}"
+#      register: result
+#    - debug:
+#        msg: "{{ result.stdout}}"
