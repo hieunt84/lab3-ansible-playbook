@@ -2,14 +2,14 @@
 - name: play1 
   hosts: centos 
   vars:
-    - test: "apache22.yml"
+    - _test: "apache22.yml.abc.dcf"
   tasks:
     - name: Include Apache 2.2 variables.
       set_fact: 
-        result1: "{{ test.split('.')[1] }}"
+        test: "{{ _test.split('.')[1] }}"
 
     - name: print result
-      command: echo "{{ result1 }}"
+      command: echo "{{ test }}"
       changed_when: false
       register: result
 
