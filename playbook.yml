@@ -7,9 +7,10 @@
     - name: Include Apache 2.2 variables.
       set_fact: 
         result1: "{{ test.split('.')[1] }}"
-        
+
     - name: print result
       command: echo "{{ result1 }}"
+      changed_when: false
       register: result
 
     - debug:
