@@ -6,7 +6,7 @@
   tasks:
     - name: Include Apache 2.2 variables.
       set_fact: 
-        test: "{{ _test.split('.')[1] }}"
+        test: "{{ _test.split('.') }}"
 
     - name: print result
       command: echo "{{ test }}"
