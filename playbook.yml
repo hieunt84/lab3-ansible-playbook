@@ -5,4 +5,4 @@
     - ip: "apache22.yml.abc.dcf"
   tasks:
     - debug:
-        msg: "{{ ip.split('.')[1] }}"
+        msg: "{{ ip.split('.')[0] }}"
