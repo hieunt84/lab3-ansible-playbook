@@ -3,7 +3,7 @@
   hosts: centos 
   tasks:
     - name: Check version of Apache.
-      command: echo "testing ..."
+      command: httpd "-v"
       changed_when: false
       check_mode: false
       register: result
