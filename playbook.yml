@@ -12,7 +12,7 @@
     - name: 2.print 
       command: 
 #        cmd: echo "{{ test }}"
-      cmd: echo
+        cmd: echo
       register: result
 
     - name: show result tasks on screen 
