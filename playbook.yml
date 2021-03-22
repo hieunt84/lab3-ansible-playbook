@@ -11,8 +11,8 @@
       
     - name: 2.print 
       command: 
-#        cmd: echo "{{ test }}"
-        cmd: echo "testtttttttttttttttttttt"
+        cmd: echo "{{ test }}"
+#        cmd: echo "testtttttttttttttttttttt"
       register: result
 
     - name: show result tasks on screen 
