@@ -4,8 +4,8 @@
   tasks:
     - name: Check version of Apache.
       command: echo "testing ..."
-#      changed_when: false
-#      check_mode: false
-#      register: result
-#    - debug:
-#        msg: "{{ result.stdout}}"
+      changed_when: false
+      check_mode: false
+      register: result
+    - debug:
+        msg: "{{ result.stdout}}"
