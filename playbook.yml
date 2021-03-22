@@ -2,10 +2,12 @@
 - name: play1 
   hosts: centos 
   tasks:
-    - name: Check version of Apache.
-      command: httpd "-v"
-      changed_when: false
-      check_mode: false
+   - name: Include Apache 2.2 variables.
+      vars: 
+        - test: "apache-22.yml"
+      set_facts: 
+        result: "{{ test.split('.')[1] }}"
       register: result
+      
     - debug:
         msg: "{{ result.stdout}}"
