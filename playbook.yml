@@ -1,13 +1,15 @@
 ---
-- hosts: centos
-#  tasks: 
-#    - name: 1.remove http 
-#      service: name=httpd state=absent autoremove=yes
+- hosts: centos 
+  vars:
+    - apache_packages_tmp:
+      - http
+      - mysql
+  tasks:
+    - name: Define apache_packages.
+      set_fact:
+        test: "{{ apache_packages_tmp | list }}"
+#        result: "{{ apache_packages }}"
+      register: test
 
-#    - name: 2.remove nginx 
-#      service: name=nginx state=absent autoremove=yes
-
-  roles:
-    - role: 'geerling/apache'
-
-
+    - name: show result tasks on screen 
+      debug: var=test.stdout_lines

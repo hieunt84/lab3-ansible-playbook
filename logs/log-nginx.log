@@ -1,0 +1,58 @@
+[Pipeline] { (Stage Deploy With Ansible on Development Environment)
+[Pipeline] ansiblePlaybook
+[lab3-ansible-role2] $ sshpass ******** /usr/bin/ansible-playbook playbook.yml -i hosts.inv -u root -k
+
+PLAY [centos] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [client1]
+
+TASK [geerling/apache : Include OS-specific variables.] ************************
+ok: [client1]
+
+TASK [geerling/apache : Include variables for Amazon Linux.] *******************
+skipping: [client1]
+
+TASK [geerling/apache : Define apache_packages.] *******************************
+ok: [client1]
+
+TASK [geerling/apache : include_tasks] *****************************************
+included: /var/lib/jenkins/workspace/lab3-ansible-role2/roles/geerling/apache/tasks/setup-RedHat.yml for client1
+
+TASK [geerling/apache : Ensure Apache is installed on RHEL.] *******************
+changed: [client1]
+
+TASK [geerling/apache : Get installed version of Apache.] **********************
+ok: [client1]
+
+TASK [geerling/apache : Create apache_version variable.] ***********************
+ok: [client1]
+
+TASK [geerling/apache : Include Apache 2.2 variables.] *************************
+skipping: [client1]
+
+TASK [geerling/apache : Include Apache 2.4 variables.] *************************
+ok: [client1]
+
+TASK [geerling/apache : Configure Apache.] *************************************
+included: /var/lib/jenkins/workspace/lab3-ansible-role2/roles/geerling/apache/tasks/configure-RedHat.yml for client1
+
+TASK [geerling/apache : Configure Apache.] *************************************
+ok: [client1] => (item={'regexp': '^Listen ', 'line': 'Listen 80'})
+
+TASK [geerling/apache : Check whether certificates defined in vhosts exist.] ***
+
+TASK [geerling/apache : Add apache vhosts configuration.] **********************
+ok: [client1]
+
+TASK [geerling/apache : Check if localhost cert exists (RHEL 8 and later).] ****
+skipping: [client1]
+
+TASK [geerling/apache : Ensure httpd certs are installed (RHEL 8 and later).] ***
+skipping: [client1]
+
+TASK [geerling/apache : Ensure Apache has selected state and enabled on boot.] ***
+changed: [client1]
+
+PLAY RECAP *********************************************************************
+client1                    : ok=12   changed=2    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0 
