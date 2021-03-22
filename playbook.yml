@@ -6,8 +6,11 @@
   tasks:
     - name: Include Apache 2.2 variables.
       set_fact: 
-        result: "{{ test.split('.')[1] }}"
+        result1: "{{ test.split('.')[1] }}"
+        
+    - name: print result
+      command: echo "{{ result1 }}"
       register: result
 
     - debug:
-        msg: "{{ result.stdout}}"
+        msg: "{{ result.stdout }}"
