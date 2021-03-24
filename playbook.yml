@@ -1,8 +1,18 @@
 ---
 - name: play1 
-  hosts: centos 
-  vars:
-    - ip: "apache22.yml.abc.dcf"
-  tasks:
-    - debug:
-        msg: "{{ ip.split('.')[0] }}"
+  hosts: centos
+  roles:
+    - role: geerling.apache
+    - role: geerling.mysql-master
+
+
+# vars:
+#   tasks:
+#    - name: Define packages.
+#      set_fact:
+#        pa: "{{ ___packages | list }}"
+#   
+#    - debug: 
+#        msg: "{{ pa }}"
+
+#######################################################################
