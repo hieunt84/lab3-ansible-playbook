@@ -3,7 +3,7 @@
   hosts: centos
   roles:
     - apache
-
+    - geerling.mysql
 
 
 
