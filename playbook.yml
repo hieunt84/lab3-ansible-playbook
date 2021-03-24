@@ -2,7 +2,7 @@
 - name: play1 
   hosts: centos
   roles:
-    - role: 'geerling.mysql'
+    - role: 'geerling/mysql'
 
 
 #    - apache
