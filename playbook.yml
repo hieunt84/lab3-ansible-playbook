@@ -2,10 +2,12 @@
 - name: play1 
   hosts: centos
   roles:
-    - geerling.apache
+    - apache
+
+
+
+
 #    - { role: geerling.mysql }
-
-
 # vars:
 #   tasks:
 #    - name: Define packages.
