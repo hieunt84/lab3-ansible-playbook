@@ -2,8 +2,8 @@
 - name: play1 
   hosts: centos
   roles:
-    - role: geerling.apache
-    - role: geerling.mysql-master
+    - { role: geerling.apache }
+    - { role: geerling.mysql }
 
 
 # vars:
